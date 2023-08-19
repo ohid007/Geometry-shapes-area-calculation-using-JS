@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry calculation using JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="flex gap-4 mt-10">
+        <!-- geometrical shape container -->
+        <div class="grid grid-cols-3 gap-4">
+            <!-- triangle shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/triangle.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 id="t-name" class="card-title">Triangle</h2>
+                  <p>Area (A) =<span id="triangle-area">0.5 x b x h</span> cm <sup>2</sup></p>
+                  <p> <input id="t-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"> <span>cm</span> 
+                    <input id="height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button id="triangle-btn" class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            <!-- Rectangle shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/rectangle.png " alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Rectangle</h2>
+                  <p>Area (A) =<span id="r-area"> w x l</span></p>
+                  <p> <input id="r-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"> <span>cm</span> <input id="r-height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button id="r-button"  class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            <!-- Parallelogram shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/parallelogram.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Parallelogram</h2>
+                  <p>Area (A)=<span id="p-area">b x h</span></p>
+                  <p> <input id="p-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"> <span>cm</span> <input id="p-height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button id="p-button" class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            <!-- Rhombus shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/rhombus.png " alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 id="Rhombus" class="card-title">Rhombus</h2>
+                  <p>Area (A)=<span id="Rhombus-area">0.5x d <sub>1</sub>x d <sub>2</sub></span></p>
+                  <p> <input id="Rhombus-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"> <span>cm</span> <input id="Rhombus-height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button onclick="handleClick('Rhombus-bottom','Rhombus-height','Rhombus-area', 'Rhombus')" class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            <!--Pentagon shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/pentagon.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 id="pentagon" class="card-title">Pentagon</h2>
+                  <p>Area (A)=<span id="Pentagon-area">0.5x p x h</span></p>
+                  <p> <input id="Pentagon-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"> <span>cm</span> <input id="Pentagon-height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button onclick="handleClick('Pentagon-bottom','Pentagon-height','Pentagon-area', 'pentagon')" class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+            <!-- Ellipse shape -->
+            <div class="card bg-base-100 shadow-xl p-4">
+                <figure><img src="/images/ellipse.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Ellipse</h2>
+                  <p>Area (A)=<span id="Ellipse-area">π ab </span></p>
+                  <p> <input id="Ellipse-bottom" class="bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="b"><span>cm</span> <input id="Ellipse-height" class=" bg-gray-200 w-20 rounded-sm px-2" type="text" placeholder="h"> <span>cm</span></p>
+                  <div class="card-actions">
+                    <button id="Ellipse-button" class="btn btn-primary w-full font-bold">Calculate</button>
+                  </div>
+                </div>
+              </div>
+             
+        </div>
+        
+        <!-- Area calculation -->
+        <div class="w-[400px] border-2 border-blue-100">
+            <p class=" text-center text-2xl underline">Area Calculation</p>
+            <div id="calculation-area">
+
+            </div>
+        </div>
+         
+    </main>
+   <script src="javascript/function.js"></script> 
+   <script src="javascript/calculation.js"></script>
+</body>
+</html>
